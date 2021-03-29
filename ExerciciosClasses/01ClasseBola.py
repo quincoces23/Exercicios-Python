@@ -4,9 +4,9 @@
 
 class Bola:
     def __init__(self, cor, circunferencia, material):
-        self.cor = cor
-        self.circunferencia = circunferencia
-        self.material = material
+        self._cor = cor
+        self._circunferencia = circunferencia
+        self._material = material
 
     @property
     def cor(self):
@@ -31,3 +31,14 @@ class Bola:
     @material.setter
     def material(self, material):
         self.material = material
+
+    def __str__(self):
+        return f'{bola_kiko._cor} - {bola_kiko._circunferencia} - {bola_kiko._material}'
+
+
+bola_kiko = Bola('Azul', 'quadrada', 'borracha')
+
+lista_bolas = [bola_kiko]
+
+for bolas in lista_bolas:
+    print(f'{bolas}')
